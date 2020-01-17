@@ -3,17 +3,12 @@ package com.SeleniumActivity2;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 
-import java.nio.charset.Charset;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
@@ -23,6 +18,7 @@ public class SeleniumNC {
     static String emailUsed;
     static String passwodUsed;
     static String nicknameUsed;
+    static WebElement element;
 
     @Before
     public void launchBrowser(){
@@ -113,7 +109,7 @@ public class SeleniumNC {
                 .sendKeys("test me not");
         driver.findElement(By.xpath("//*[@id=\"UserQuestionnaireForm\"]//button")).click();
         driver.findElement(By.xpath("//*[contains(@href,'/mypage')]")).click();
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         driver.findElement(By.id("btn_connect_test_first")).click();
 
         // Store the current window handle
@@ -152,13 +148,14 @@ public class SeleniumNC {
         //*[@id="testing_area"]//div[2]/label[1]
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"testing_area\"]/div/ul/li/a")).click();
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         driver.switchTo().window(winHandleBefore);
         driver.findElement(By.id("btn_connect_test_next")).click();
 
         // Store the current window handle
         winHandleBefore = driver.getWindowHandle();
 
+        //admin login
         driver.get("https://english.fdc-inc.com/admin/login");
         Thread.sleep(1000);
         driver.findElement(By.id("AdminLoginId")).sendKeys("FDC-Tester-Arman");
@@ -166,10 +163,38 @@ public class SeleniumNC {
         driver.findElement(By.id("AdminRememberMe")).click();
         driver.findElement(By.xpath("//button")).click();
         Thread.sleep(3000);
+        driver.findElement(By.xpath("//*[@id=\"sidebar-wrapper\"]//li[19]/a")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.id("UserManageUserEmail")).sendKeys(emailUsed);
+        driver.findElement(By.id("UserManageOurIp")).click();
+        driver.findElement(By.xpath("//*[@id=\"UserManageIndexForm\"]//button")).click();
+
+        //admin userdetails
+        Thread.sleep(3000);
+        //*[contains(@href,'/admin/user-manage/member')]
+        JavascriptExecutor js = ((JavascriptExecutor) driver);
+//        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+//        Thread.sleep(5000);
+        element = driver.findElement(By.xpath("//*[@id=\"admin\"]//tr[2]/td[1]/a"));
+        js.executeScript("arguments[0].click();", element);
+        Thread.sleep(3000);
+
+        // Store the current window handle
+        winHandleBefore = driver.getWindowHandle();
+
+        // Switch to new window opened
         for(String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
         }
-        //*[@id="sidebar-wrapper"]/ul/li[19]/a
+        driver.findElement(By.id("UserSmsThroughFlg1")).click();
+        driver.findElement(By.id("editUserDetail")).click();
+        Thread.sleep(1000);
+
+        driver.get("https://english.fdc-inc.com/admin/logout");
+        Thread.sleep(1000);
+        driver.get("https://english.fdc-inc.com/login");
+        Thread.sleep(2000);
+
 
 
     }
