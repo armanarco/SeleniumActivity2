@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c23c7614-ff58-4670-bc75-7f143b20a027" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CommonFunctions/Assertion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CommonFunctions/User.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/SeleniumActivity2/SeleniumNC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/SeleniumActivity2/SeleniumNC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CommonFunctions/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/SeleniumActivity2/SeleniumNC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/SeleniumActivity2/SeleniumNC.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +44,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SeleniumNC.Registration">
+  <component name="RunManager" selected="JUnit.SeleniumNC">
     <configuration name="SeleniumNC" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumExercise2" />
       <extension name="coverage">
@@ -105,12 +108,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SeleniumNC.teacherSearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SeleniumExercise2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.SeleniumActivity2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.SeleniumActivity2" />
+      <option name="MAIN_CLASS_NAME" value="com.SeleniumActivity2.SeleniumNC" />
+      <option name="METHOD_NAME" value="teacherSearch" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SeleniumNC.Registration" />
         <item itemvalue="JUnit.SeleniumNC" />
-        <item itemvalue="JUnit.SeleniumNC.givenUsingPlainJava_whenGeneratingRandomStringUnbounded_thenCorrect" />
         <item itemvalue="JUnit.SeleniumNC.doLogin" />
+        <item itemvalue="JUnit.SeleniumNC.teacherSearch" />
+        <item itemvalue="JUnit.SeleniumNC.Registration" />
+        <item itemvalue="JUnit.SeleniumNC.givenUsingPlainJava_whenGeneratingRandomStringUnbounded_thenCorrect" />
       </list>
     </recent_temporary>
   </component>
@@ -132,7 +152,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
